@@ -12,16 +12,17 @@
 #    	Berlin\tFrankfurt:20\tMunich:50
 #    	Frankfurt\tBerlin:20\tMunich:10
 #    	Munich
+import sys
 
 
 
-file = open('test1.dat');
+file = open(sys.argv[1]);
 
 Dics=dict()
 words=list()
 
 for line in file:
-    print line
+    #print line
     words=line.split()
     if Dics.get(words[1])==None:
         Dics[words[1]]=words[1]+"\t"+str(words[2])+":"+str(words[0])
